@@ -119,7 +119,6 @@ const decrireMeteo = (conditions, temperature) => {
 //   et température > 20        → ajouter { icone: "🕶️", texte: "Pense à la crème solaire" }
 
 const recommanderTenue = (conditions, temperature) => {
-  // Écris ton code ici — retourne un tableau []
   let recommandations = [];
   if (temperature < 0) {
     recommandations.push({
@@ -197,5 +196,5 @@ btnAnalyser.addEventListener("click", () => {
 /* 
 1. Les conditions météo sont indépendantes les unes des autres donc il n'y a pas besoin du else qui exclut la condition if précédente.(si une condition est vérifiée les autres sont impossibles). Contrairement aux conditions de températures !
 
-2. Si l'utilisateurice entre une température de 28°C avec des conditions "ensoleille" les recommandations suivantes s'affichent : "🕶️ Pense à la crème solaire". Il n'y a pas de recommandations concernant cette température (pas de recommandations particulière entre 20 (inclus) et 30 degrés (exclus)) mais la "crème solaire" arrive grâce à la condition "ensoleille". De plus, l'emjoi affiché est "☀️" et la description "Temps agréable".
+2. Si l'utilisateurice entre une température de 28°C avec des conditions "ensoleille" les recommandations suivantes s'affichent : "🕶️ Pense à la crème solaire". Il n'y a pas de recommandations concernant cette température (pas de recommandations particulière entre 20 (inclus) et 30 degrés (exclus)) mais la "crème solaire" arrive grâce à la condition "ensoleille" ET la température supérieure à 20°C. De plus, l'emjoi affiché est "☀️" et la description "Temps agréable".
  */
