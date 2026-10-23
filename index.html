@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdaMétéo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <header class="app-header">
+      <span class="logo">⛅ AdaMétéo</span>
+      <span class="tagline">Sais-tu quoi porter aujourd'hui ?</span>
+    </header>
+
+    <main>
+
+      <!-- Formulaire de saisie -->
+      <section class="formulaire">
+        <div class="champ">
+          <label for="temperature">Température (°C)</label>
+          <input type="number" id="temperature" placeholder="ex. 14" min="-20" max="50">
+        </div>
+
+        <div class="champ">
+          <label for="conditions">Conditions météo</label>
+          <select id="conditions">
+            <option value="">-- Choisir --</option>
+            <option value="ensoleille">☀️ Ensoleillé</option>
+            <option value="nuageux">⛅ Nuageux</option>
+            <option value="pluvieux">🌧️ Pluvieux</option>
+            <option value="orageux">⛈️ Orageux</option>
+            <option value="neige">❄️ Neige</option>
+            <option value="brouillard">🌫️ Brouillard</option>
+          </select>
+        </div>
+
+        <button id="btn-analyser" class="btn-analyser">Analyser la météo</button>
+      </section>
+
+      <!-- Résultat -->
+      <section class="resultat cache" id="resultat">
+        <div class="meteo-card">
+          <div class="meteo-emoji" id="meteo-emoji">☀️</div>
+          <div class="meteo-info">
+            <p class="meteo-description" id="meteo-description">—</p>
+            <p class="meteo-temperature" id="meteo-temperature">—</p>
+          </div>
+        </div>
+        <div class="recommandations" id="recommandations"></div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

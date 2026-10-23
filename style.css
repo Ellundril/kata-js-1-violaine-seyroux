@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap');
+
+:root {
+  --bg:        #F7EAE4;
+  --hero:      #C94530;
+  --rouge:     #C94530;
+  --rouge-mid: #E06248;
+  --rouge-l:   #F5D5CC;
+  --rouge-brd: #E8C0B0;
+  --violet:    #5B4FDC;
+  --vert:      #3D9B6B;
+  --noir:      #1A1A1A;
+  --blanc:     #FFFFFF;
+  --gris-txt:  #4A4A4A;
+  --tag-bg:    #EDE0D9;
+  --card-brd:  #E8D0C8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Barlow", sans-serif;
+  background: var(--bg);
+  color: var(--noir);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* ── App container ── */
+.app {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 0 0 80px;
+}
+
+/* ── Header ── */
+.app-header {
+  background: var(--hero);
+  padding: 40px 40px 36px;
+}
+
+.logo {
+  display: block;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  color: var(--blanc);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.tagline {
+  font-size: .95rem;
+  color: rgba(255,255,255,.65);
+}
+
+/* ── Main ── */
+main {
+  padding: 36px 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Formulaire ── */
+.formulaire {
+  background: var(--blanc);
+  border: 1.5px solid var(--card-brd);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.champ {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--rouge);
+}
+
+input[type="number"],
+select {
+  background: var(--bg);
+  border: 1.5px solid var(--card-brd);
+  padding: 11px 14px;
+  font-family: "Barlow", sans-serif;
+  font-size: 1rem;
+  color: var(--noir);
+  outline: none;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: border-color .15s, background .15s;
+  border-radius: 0;
+}
+
+input[type="number"]:focus,
+select:focus {
+  border-color: var(--rouge);
+  background: var(--rouge-l);
+}
+
+input::placeholder {
+  color: #bbb;
+  font-style: italic;
+}
+
+select option { background: var(--blanc); }
+
+.btn-analyser {
+  background: var(--rouge);
+  color: var(--blanc);
+  border: none;
+  padding: 13px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .15s;
+  width: 100%;
+}
+
+.btn-analyser:hover { background: #A8381F; }
+
+/* ── Résultat ── */
+.cache { display: none; }
+
+.resultat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeIn .25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Carte météo principale */
+.meteo-card {
+  background: var(--hero);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.meteo-emoji {
+  font-size: 3rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.meteo-description {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--blanc);
+  margin-bottom: 4px;
+}
+
+.meteo-temperature {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: .82rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+}
+
+/* ── Recommandations ── */
+.recommandations {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reco-item {
+  background: var(--blanc);
+  border: 1.5px solid var(--card-brd);
+  border-left: 5px solid var(--rouge);
+  padding: 12px 16px;
+  font-size: .93rem;
+  color: var(--gris-txt);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  line-height: 1.5;
+}
+
+.reco-item .reco-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .app-header { padding: 32px 24px 28px; }
+  .logo { font-size: 2.2rem; }
+  main { padding: 28px 16px 0; }
+}
